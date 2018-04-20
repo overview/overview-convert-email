@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# This is a bit unusual: we run tests by building the test image. If the
+# tests fail, the image won't be built.
+
+docker build --target=test "$(dirname "$0")"

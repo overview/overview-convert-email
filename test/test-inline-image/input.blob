@@ -1,0 +1,45 @@
+MIME-Version: 1.0
+Message-ID: <CAMWjz6EX28vNo3B5FXnAkoo1vv1X_yK=4pCKZCr8Z=7dm9NLnQ@mail.gmail.com>
+Date: Fri, 20 Apr 2018 20:32:31 +0000
+Subject: Test inline image
+From: Adam Hooper <adam@adamhooper.com>
+To: Adam Hooper <adam@adamhooper.com>
+Content-Type: multipart/related; boundary="94eb2c1cc8aa605210056a4d962b"
+
+--94eb2c1cc8aa605210056a4d962b
+Content-Type: multipart/alternative; boundary="94eb2c1cc8aa60520d056a4d962a"
+
+--94eb2c1cc8aa60520d056a4d962a
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+Here is the image:
+[image: pngout.png]
+Bye
+-- 
+Adam Hooper
+http://adamhooper.com
++1-929-332-3503
+
+--94eb2c1cc8aa60520d056a4d962a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Here is the image:=C2=A0<div><img src=3D"cid:162e4c200961f=
+1631402" alt=3D"pngout.png" class=3D"" style=3D"max-width: 100%; opacity: 1=
+;"><br></div><div>Bye</div></div>-- <br><div dir=3D"ltr" class=3D"gmail_sig=
+nature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr">Adam Hooper<div=
+><a href=3D"http://adamhooper.com">http://adamhooper.com</a></div><div>+1-9=
+29-332-3503</div></div></div>
+--94eb2c1cc8aa60520d056a4d962a--
+--94eb2c1cc8aa605210056a4d962b
+Content-Type: image/png; name="pngout.png"
+Content-Disposition: attachment; filename="pngout.png"
+Content-Transfer-Encoding: base64
+X-Attachment-Id: 162e4c200961f1631402
+Content-ID: <162e4c200961f1631402>
+
+iVBORw0KGgoAAAANSUhEUgAAABkAAAAKCAAAAABkwKqKAAAAmElEQVQYV2P4jwswfGeAgMXIotKn
+gTIghvBuZGE0mRehQnJ9/+8Inv3/THR/MNCMyVCZf5Y5766rbvk/S+OrezGKngsCf/7/nxr//7+v
+ju4PFJmNDMxMjAxO//9vYpiFas85qX9gqz8rJUu9/f9fFiHz16Lw5eu5U/4nhf5PDf3/33jeP4Tb
+osXEkl9vAGr4rLzk/1ppxskAcLS0hUtJUT8AAAAASUVORK5CYII=
+--94eb2c1cc8aa605210056a4d962b--

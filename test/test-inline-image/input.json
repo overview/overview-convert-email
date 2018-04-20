@@ -1,0 +1,10 @@
+{
+  "filename": "inbox.pst/Personal Folders/Inbox/3",
+  "contentType": "message/rfc822",
+  "languageCode": "fr",
+  "wantOcr": true,
+  "wantSplitByPage": true,
+  "metadata": {
+    "foo": "bar"
+  }
+}

@@ -1,0 +1,18 @@
+
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=0.json
+
+{"filename":"inbox.pst/Personal Folders/Inbox/3","wantOcr":true,"wantSplitByPage":true,"languageCode":"fr","metadata":{"foo":"bar","To":"Adam Hooper <adam@adamhooper.com>","From":"Adam Hooper <adam@adamhooper.com>","Date":"2018-04-20T20:56:52Z","Subject":"Re: First in thread","Message-ID":"CAMWjz6GEJ8EnY6B6r5eQ7YOaV90JooWU=UxqCUp69orpTq15YA@mail.gmail.com","In-Reply-To":"<CAMWjz6EyJ-=OEFc+hMigH2-tQ-NsMS_288wozUrB9Zoq0kkJwg@mail.gmail.com>","References":"<CAMWjz6EyJ-=OEFc+hMigH2-tQ-NsMS_288wozUrB9Zoq0kkJwg@mail.gmail.com>"},"contentType":"text/html"}
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=0.blob
+
+<div dir="ltr">Right back at you: hi</div><br><div class="gmail_quote"><div dir="ltr">On Fri, Apr 20, 2018 at 4:56 PM Adam Hooper &lt;<a href="mailto:adam@adamhooper.com">adam@adamhooper.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">Hi</div>-- <br><div dir="ltr" class="m_5753046131146856366gmail_signature" data-smartmail="gmail_signature"><div dir="ltr">Adam Hooper<div><a href="http://adamhooper.com" target="_blank">http://adamhooper.com</a></div><div><a href="tel:(929)%20332-3503" value="+19293323503" target="_blank">+1-929-332-3503</a></div></div></div></blockquote></div>-- <br><div dir="ltr" class="gmail_signature" data-smartmail="gmail_signature"><div dir="ltr">Adam Hooper<div><a href="http://adamhooper.com">http://adamhooper.com</a></div><div>+1-929-332-3503</div></div></div>
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=progress
+
+{"children":{"nProcessed":1,"nTotal":1}}
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=done
+
+
+--MIME-BOUNDARY--

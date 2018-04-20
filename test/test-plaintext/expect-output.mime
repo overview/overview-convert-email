@@ -1,0 +1,25 @@
+
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=0.json
+
+{"filename":"inbox.pst/Personal Folders/Inbox/3","wantOcr":true,"wantSplitByPage":true,"languageCode":"fr","metadata":{"foo":"bar","To":"adam@adamhooper.com","From":"Overview <no-reply@sns.amazonaws.com>","Date":"2018-04-19T16:07:04Z","Subject":"AWS Notification Message","Message-ID":"01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@email.amazonses.com","In-Reply-To":null,"References":null},"contentType":"text/plain"}
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=0.blob
+
+ERROR application - 
+
+--
+If you wish to stop receiving notifications from this topic, please click or visit the link below to unsubscribe:
+https://sns.us-east-1.amazonaws.com/unsubscribe.html?SubscriptionArn=arn:aws:sns:us-east-1:111111111111:Overview:11111111-1111-1111-1111-111111111111&Endpoint=adam@adamhooper.com
+
+Please do not reply directly to this email. If you have any questions or comments regarding this email, please contact us at https://aws.amazon.com/support
+
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=progress
+
+{"children":{"nProcessed":1,"nTotal":1}}
+--MIME-BOUNDARY
+Content-Disposition: form-data; name=done
+
+
+--MIME-BOUNDARY--
