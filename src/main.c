@@ -301,8 +301,8 @@ stream_body(Out* out, JsonObject* output_json, int index, int n_children, GMimeP
 void
 stream_child(Out* out, JsonObject* output_json, int index, int n_children, GMimePart* part)
 {
-	if (GMIME_IS_PART(part) && g_mime_part_is_attachment((GMimePart*) part)) {
-		stream_attachment(out, output_json, index, n_children, (GMimePart*) part);
+	if (g_mime_part_is_attachment((GMimePart*) part)) {
+		stream_attachment(out, output_json, index, n_children, part);
 	} else {
 		stream_body(out, output_json, index, n_children, part);
 	}
