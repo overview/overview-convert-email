@@ -1,11 +1,11 @@
-FROM overview/overview-convert-framework:0.0.15 as framework
+FROM overview/overview-convert-framework:0.0.17 as framework
 
 
-FROM alpine:3.7 AS os
+FROM alpine:3.10 AS os
 RUN apk add --update --no-cache ca-certificates
 
 
-FROM alpine:3.7 AS test-base
+FROM alpine:3.10 AS test-base
 RUN apk add --update --no-cache bats
 WORKDIR /app
 
@@ -13,11 +13,11 @@ WORKDIR /app
 # alpine's gmime+json-glib packages don't have static variants. We'll need
 # to compile them ourselves. (Debian doesn't have json-glib, either, and it
 # uses glibc, which shouldn't be statically linked.)
-FROM alpine:3.7 AS build
-RUN \
-    apk add --update --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted \
-        gnu-libiconv \
-        gnu-libiconv-dev \
+#
+# Note the icky hack for mesontest. Newer versions of meson use "meson test";
+# older ones allowed "mesontest". json-glib still uses "mesontest".
+FROM os AS build
+RUN true \
     && apk add --update --no-cache \
         ca-certificates \
         curl \
@@ -29,17 +29,21 @@ RUN \
         musl-dev \
         util-linux-dev \
         gcc \
+        gnu-libiconv \
+        gnu-libiconv-dev \
         make \
         tar \
         xz \
     && mkdir -p /build && cd /build \
-    && curl -o - --location https://download.gnome.org/sources/gmime/3.2/gmime-3.2.0.tar.xz | tar -Jx \
+    && curl -o - --location https://download.gnome.org/sources/gmime/3.2/gmime-3.2.3.tar.xz | tar -Jx \
     && cd gmime-* \
     && ./configure && make -j4 install \
     && cd /build \
-    && curl -o - --location https://download.gnome.org/sources/json-glib/1.4/json-glib-1.4.2.tar.xz | tar -Jx \
+    && curl -o - --location https://download.gnome.org/sources/json-glib/1.4/json-glib-1.4.4.tar.xz | tar -Jx \
     && cd json-glib-* \
     && sed -ie 's/json_lib = library/json_lib = static_library/' json-glib/meson.build \
+    && echo "#!/bin/sh\nexec meson test \"$@\"" >/usr/bin/mesontest \
+    && chmod +x /usr/bin/mesontest \
     && ./configure && make install
 WORKDIR /build/convert-email
 COPY Makefile Makefile

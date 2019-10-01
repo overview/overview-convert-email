@@ -1,0 +1,62 @@
+Delivered-To: adam@adamhooper.com
+Received: by 10.223.136.154 with SMTP id f26csp935227wrf;
+        Thu, 19 Apr 2018 09:07:04 -0700 (PDT)
+X-Google-Smtp-Source: AB8JxZoMtdQ7xEEXwRpNqqYi5incLwf81WWglqqoFyhN4/i3KSFm0FDH4JS3NsoFPeWkUmWPn1au
+X-Received: by 10.12.150.202 with SMTP id b10mr1412539qvd.8.1524154024913;
+        Thu, 19 Apr 2018 09:07:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1524154024; cv=none;
+        d=google.com; s=arc-20160816;
+        b=uQZKLSc+u401ZpoaiY9qb9OMiQ/VEIEiKnNRj0oF8+YUEd4UgqPZUxkkZyj2UGDPWm
+         ttUnoeVAUnyxceCpbOmYiQuYUNkn8VpEeAwYtvwpc7aXipQwTCsTp8uzU8rJmi/zk0nu
+         PNeJLCJoT9b6lU+aYXuFQCS37GtN7PHrmMPgDJCA2+iUIgUYvCZeJLyJH4kQOHbkltJ9
+         VfckGSCScnWSXYjPBTW0P4Bra2cnCIyO3o4jUZRlx6PK+i2xSrXFa7r2YHng/C6nDbjf
+         8IlLaBVAm8IU5i6dIRsPkcc8nZJFa5CsOdG2iQRqSVxu/Xj5/mhkqODjw3FeOIluBFhR
+         M2Cw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:content-transfer-encoding:mime-version:subject
+         :message-id:to:from:date:dkim-signature:dkim-signature
+         :arc-authentication-results;
+        bh=4KjqLCDXqnZ73iqIP+blQGUvi5rVgzFLP3CLteWG+ME=;
+        b=liiwm7xnuFJG1HhCtDe6BgHfuFHfsYgviRh5TEZ1fgwXJnL4EoBUFP2zm9rUAaamVJ
+         g+HK3ayv8psBd8AKiFqf6H7aGY+5BXDbUqNAwVcCyEf6d2jfIp3/rH8xxkU6UOVS2QnO
+         4Wse2eNVDsF2Lcp8iF0J6OCpP9fmhSze3e/3RO5ThhFdZ3YcEOsmvgaRld4c+dbA4Ixw
+         FKEL0yHs162H5PAmnmt3Bctufpe+56WsaHbZyi0FkzFs9vPGDawXbeH+pjHDiBSoqNss
+         ebLi23JH4e2aoslBTjZ+dySjulm6thV1r/oUcJ6it5TnVlS1u46mNy2f9AX59f1DxfeR
+         UkOQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sns.amazonaws.com header.s=rz7vk4jywqubb4z4msexjeruhp3xxmz7 header.b=I9TXTgHt;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=biXOarKR;
+       spf=pass (google.com: domain of 01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@amazonses.com designates 54.240.10.110 as permitted sender) smtp.mailfrom=01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@amazonses.com
+Return-Path: <01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@amazonses.com>
+Received: from a10-110.smtp-out.amazonses.com (a10-110.smtp-out.amazonses.com. [54.240.10.110])
+        by mx.google.com with ESMTPS id m9si5367570qki.378.2018.04.19.09.07.04
+        for <adam@adamhooper.com>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Thu, 19 Apr 2018 09:07:04 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@amazonses.com designates 54.240.10.110 as permitted sender) client-ip=54.240.10.110;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sns.amazonaws.com header.s=rz7vk4jywqubb4z4msexjeruhp3xxmz7 header.b=I9TXTgHt;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=biXOarKR;
+       spf=pass (google.com: domain of 01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@amazonses.com designates 54.240.10.110 as permitted sender) smtp.mailfrom=01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=rz7vk4jywqubb4z4msexjeruhp3xxmz7; d=sns.amazonaws.com; t=1524154024; h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding; bh=JASS4xaa1H1DKQNFkSxuWw44HHW8wXixtzF92dtRJA0=; b=I9TXTgHtfw6BLnZ20fiPrgQDrdwn8lgdvbBfJhe0bmE3STMoA0Nfr3oNU3mfRku1 TnowbMKKAOTk/F3ClJnlT5fjGFTDkC6DYmNKKmYLRBarFu1OV3iMWfcGQ99aXgI4S19 tTO7R7zbp81rUqohOGFn+UFKAhW9YqDMpQ6UU3lQ=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1524154024; h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID; bh=JASS4xaa1H1DKQNFkSxuWw44HHW8wXixtzF92dtRJA0=; b=biXOarKRapPmq/vjHdVmuXlCkGM03NnfSMb1WATYy4ydf4Uphf4zeHqPZwpTVMR2 5wzN2rWUaaEyQnvRJk6QQi9Zu9JaiKIvdwDTZMRjCruWnS24cD0+9+toePKW6mQnPfX /Srerrqq+QOhQBfwjRoxclcvfB1s1PAfoL9D6VB4=
+Date: Thu, 19 Apr 2018 16:07:04 +0000
+From: Overview <no-reply@sns.amazonaws.com>
+To: adam@adamhooper.com
+Message-ID: <01000162dea8c1cb-809b85f8-1d14-441d-a602-9bc035cc18a3-000000@email.amazonses.com>
+Subject: AWS Notification Message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+x-amz-sns-message-id: 11111111-1111-1111-1111-111111111111
+x-amz-sns-subscription-arn: arn:aws:sns:us-east-1:111111111111:Overview:11111111-1111-1111-1111-111111111111
+X-SES-Outgoing: 2018.04.19-54.240.10.110
+Feedback-ID: 1.us-east-1.rLk2FYYR7ms1BvCiYXCIqXvY3U/J1vVW0G3YrYLy0pk=:AmazonSES
+
+ERROR application - 
+
+--
+If you wish to stop receiving notifications from this topic, please click or visit the link below to unsubscribe:
+https://sns.us-east-1.amazonaws.com/unsubscribe.html?SubscriptionArn=arn:aws:sns:us-east-1:111111111111:Overview:11111111-1111-1111-1111-111111111111&Endpoint=adam@adamhooper.com
+
+Please do not reply directly to this email. If you have any questions or comments regarding this email, please contact us at https://aws.amazon.com/support
